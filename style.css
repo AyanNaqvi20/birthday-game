@@ -1,0 +1,42 @@
+body {
+    text-align: center;
+    font-family: Arial;
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+}
+
+.hidden {
+    display: none;
+}
+
+input {
+    padding: 10px;
+    margin: 10px;
+}
+.hearts {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.heart {
+    position: absolute;
+    bottom: -50px;
+    font-size: 20px;
+    animation: floatUp 6s linear infinite;
+    color: rgba(255, 105, 180, 0.7);
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) scale(1.5);
+        opacity: 0;
+    }
+}
