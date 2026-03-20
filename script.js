@@ -4,7 +4,7 @@ const questions = [
     {
         question: "Where was our very first outing?",
         answers: ["hydri super market"],
-        messages: ["I still think about that day ❤️"],
+        messages: ["I had a crush on you ever since ❤️"],
         images: ["firstpicture.jpeg"]
     },
     {
@@ -12,7 +12,7 @@ const questions = [
         answers: ["hands", "boobies"],
         messages: [
             "They are made to be in my hands 🥺❤️",
-            "Softest & the most pleasing thing i have ever touched in my entire life 😍"
+            "Softest & the most pleasing thing i have ever vitnessed in my entire life 😍"
         ],
         images: [
             "hands.jpeg",
@@ -24,7 +24,7 @@ const questions = [
         messages: ["Tell bhabi he is our kid hehe"],
         images: ["meeru.jpeg"]
     },
-    {   question: "Kyaaa unle maan jaingay?",
+    {   question: "Kyaaa uncle maan jaingay?",
         answers: ["yeth"],
         messages: ["InshAllahhhhhh"] 
     }
@@ -127,6 +127,9 @@ function typeMessage(text, elementId) {
         }
     
         typing();
+
+// start gallery after letter finishes
+setTimeout(showGallery, text.length * 50 + 500);
     }
     function createHeart() {
         const heart = document.createElement("div");
@@ -156,3 +159,31 @@ function typeMessage(text, elementId) {
             document.getElementById("passwordError").innerText = "Wrong password 😢";
         }
     }
+    const galleryImages = [
+        "pic7.jpeg",
+        "pic1.jpeg",
+        "pic2.jpeg",
+        "pic3.jpeg",
+        "pic4.jpeg",
+        "pic5.jpeg",
+        "pic6.jpeg"
+    ];
+function showGallery() {
+    let gallery = document.getElementById("photoGallery");
+    
+     galleryImages.forEach((src, index) => {
+        setTimeout(() => {
+            let img = document.createElement("img");
+            img.src = src;
+            img.classList.add("gallery-img");
+    
+            gallery.appendChild(img);
+    
+            // trigger animation
+            setTimeout(() => {
+                img.classList.add("show");
+            }, 50);
+    
+        }, index * 500); // delay between each image
+    });
+}

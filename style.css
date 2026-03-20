@@ -85,3 +85,34 @@ button {
         width: 90%;
     }
 }
+#photoGallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.gallery-img {
+    width: 45%;          /* 👈 bigger images */
+    max-width: 200px;   /* keeps it clean on laptop */
+    height: auto;
+    border-radius: 12px;
+
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.5s ease;
+}
+
+.gallery-img.show {
+    opacity: 1;
+    transform: scale(1);
+}
+@media (max-width: 600px) {
+    .gallery-img {
+        width: 90%;      /* 👈 big full-width on phone */
+        max-width: none;
+    }
+}
+.gallery-img {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
